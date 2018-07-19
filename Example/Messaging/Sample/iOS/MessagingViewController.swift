@@ -137,7 +137,7 @@ class MessagingViewController: UIViewController {
     }
 
     requestPermissionsButton.isEnabled =
-        (allowedTypes.count == 1 && allowedTypes.first! == .silent)
+        (allowedTypes.count == 1 && allowedTypes.first! == .none)
 
     let title: PermissionsButtonTitle =
         (requestPermissionsButton.isEnabled ? .requestPermissions : .alreadyRequested)

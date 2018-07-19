@@ -54,6 +54,11 @@ class NotificationsController: NSObject {
         .requestAuthorization(options: [.alert, .badge, .sound],
                               completionHandler: { (granted, error) in
           NotificationCenter.default.post(name: UserNotificationsChangedNotification, object: nil)
+          if (granted) {
+            Messaging.messaging().subscribe(toTopic: "recipies", completion: { (error) in
+                NSLog("completed subscribing to topic, error: \(String(describing: error))")
+            })
+          }
         })
     } else if #available(iOS 8.0, *) {
       let userNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound],

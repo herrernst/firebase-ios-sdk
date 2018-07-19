@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     FirebaseApp.configure()
     Messaging.messaging().delegate = self
-    Messaging.messaging().shouldEstablishDirectChannel = true
+
     // Just for logging to the console when we establish/tear down our socket connection.
     listenForDirectChannelStateChanges();
 
