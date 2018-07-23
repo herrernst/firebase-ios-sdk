@@ -112,9 +112,9 @@ extension AppDelegate: MessagingDelegate {
   // token to your application server, or to subscribe to any topics.
   func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
     if let token = Messaging.messaging().fcmToken {
-      print("FCM Token: \(token)")
+      print("didReceiveRegistrationToken, FCM Token: \(token)")
     } else {
-      print("FCM Token: nil")
+      print("didReceiveRegistrationToken, FCM Token: nil")
     }
   }
 

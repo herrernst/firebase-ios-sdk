@@ -55,6 +55,7 @@ class NotificationsController: NSObject {
                               completionHandler: { (granted, error) in
           NotificationCenter.default.post(name: UserNotificationsChangedNotification, object: nil)
           if (granted) {
+            NSLog("trying to subscribe to topic, has FCM token? \(Messaging.messaging().fcmToken != nil )")
             Messaging.messaging().subscribe(toTopic: "recipies", completion: { (error) in
                 NSLog("completed subscribing to topic, error: \(String(describing: error))")
             })
